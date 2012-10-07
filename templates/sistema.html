@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block titulo %}{{ user.get_full_name }}{% endblock %}
+
+{% block container %}
+	<h1>Google maps</h1>
+	
+	<div id="mapa"></div>
+
+{% endblock %}
