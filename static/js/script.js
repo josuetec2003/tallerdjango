@@ -40,5 +40,16 @@ $(function(){
 			draggable: true,
 			title: 'Arrastrame!'
 		});
+
+		google.maps.event.addListener(marker, 'position_changed', function(){
+			getMarkerCoords(marker);
+		});
+	}
+
+	function getMarkerCoords(marker)
+	{
+		var markerCoords = marker.getPosition();
+		$('#id_lat').val( markerCoords.lat() );
+		$('#id_lng').val( markerCoords.lng() );
 	}
 });

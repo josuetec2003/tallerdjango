@@ -4,6 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.contrib.auth import authenticate, login, logout
+from mapas.models import Ubicacion, UbicacionForm
 
 def index(request):
 	#return HttpResponse("Hola")
@@ -36,7 +37,8 @@ def process_login(request):
 
 @login_required()
 def sistema(request):
-	return render_to_response('sistema.html', context_instance=RequestContext(request))
+	form = UbicacionForm()
+	return render_to_response('sistema.html', {'form': form}, context_instance=RequestContext(request))
 
 def process_logout(request):
 	logout(request)

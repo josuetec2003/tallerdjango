@@ -6,4 +6,13 @@
 	
 	<div id="mapa"></div>
 
+	<div id="formulario">
+		<form action="">{% csrf_token %}
+			{{ form.as_p }}
+			<p>
+				<input type="submit" value="Guargar ubicacion">
+			</p>
+		</form>
+	</div>
+
 {% endblock %}
