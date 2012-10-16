@@ -7,10 +7,11 @@
 	<div id="mapa"></div>
 
 	<div id="formulario">
-		<form action="">{% csrf_token %}
+		<form id="frmUbicacion" action="{% url agregar_ubicacion %}">
+			{% csrf_token %}
 			{{ form.as_p }}
 			<p>
-				<input type="submit" value="Guargar ubicacion">
+				<input type="submit" value="Guardar ubicacion" class="btn btn-primary">
 			</p>
 		</form>
 	</div>

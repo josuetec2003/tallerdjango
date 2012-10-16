@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+	{{ user.get_full_name }} - Mis ubicaciones
+{% endblock  %}
+
+{% block container %}
+	<h2>Mis ubicaciones</h2>
+
+	<hr>
+
+	<div id="mapa_ubicaciones"></div>
+
+	{% for ubicacion in ubicaciones %}
+		<span class="coords" 
+		      latitud="{{ ubicacion.lat }}" 
+		      longitud="{{ ubicacion.lng }}" 
+		      nombre="{{ ubicacion.nombre }}" 
+		      id="{{ ubicacion.id }}"></span>
+	{% endfor %}
+	
+{% endblock %}
